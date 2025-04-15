@@ -78,8 +78,9 @@ http://localhost:5050
 ```
 ✨ Bonus: You get slowly typed quotes, glowing buttons, and absolutely zero useful advice.
 
-📂 Project Structure
+## 📂 Project Structure
 
+```
 daily_nope/
 ├── quotes/               # JSON files with quotes
 │   ├── affirmation.json
@@ -88,15 +89,16 @@ daily_nope/
 │   ├── gratitude.json
 │   └── inner_truths.json
 ├── static/
-│   └── style.css         # Glorious dark theme with glow ✨
+│   └── style.css         # CSS for the web version
 ├── templates/
-│   └── index.html        # The HTML template for the web version
+│   └── index.html        # HTML template for the Flask app
 ├── quotes_handler.py     # Loads quotes and picks one
 ├── daily_nope.py         # CLI interface
-├── flask_app.py          # Flask Web App
-├── requirements.txt      # Python dependencies
+├── flask_app.py          # Flask web server
+├── requirements.txt      # Project dependencies
 ├── .gitignore
-└── README.md             # (You're reading it!)
+└── README.md             # You're reading it!
+```
 ✨ Why?
 
 Because toxic positivity is exhausting, and you're doing your best.
