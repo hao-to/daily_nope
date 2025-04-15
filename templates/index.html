@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>The Daily Nope</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>The Daily Nope 🖤</h1>
+
+    <div class="intro">
+        <p>Hi. I am your <strong>Unspirational Online Coach</strong>.</p>
+        <p>Since you found your way to this site... or did the site find you?</p>
+        <p>If you're tired of being told to chase dreams and sparkle, you're in the right place.</p>
+        <p>If you're here for happy inspirational quotes... well, I have bad news. This site is not for you.</p>
+        <p>But if you're up for some <em>ironic, painful, strange</em> truth... you're exactly where you belong.</p>
+        <h2 class="headline">Get your daily dose of nope.</h2>
+    </div>
+
+    <form method="get" action="/">
+        <label for="category" class="label-strong">Choose your category of Nope:</label>
+        <select name="category" id="category">
+            <option value="affirmation">affirmation 🧘</option>
+            <option value="motivation">motivation 🚀</option>
+            <option value="preppin">preppin 📋</option>
+            <option value="gratitude">gratitude 🙏</option>
+            <option value="inner_truths">inner truths 🪞</option>
+        </select>
+        <button type="submit">Show me my Nope</button>
+    </form>
+
+    {% if quote %}
+    <h2 class="category">Category: {{ category }}</h2>
+    <div class="quote-wrapper">
+        <p id="quote" class="quote"></p>
+    </div>
+    <script>
+        const quoteText = "{{ quote }}";
+        const quoteElement = document.getElementById("quote");
+        let i = 0;
+        function typeEffect() {
+            if (i < quoteText.length) {
+                quoteElement.innerHTML += quoteText.charAt(i);
+                i++;
+                setTimeout(typeEffect, 40); // Geschwindigkeit des Tippens
+            }
+        }
+        typeEffect();
+    </script>
+{% endif %}
+</body>
+</html>

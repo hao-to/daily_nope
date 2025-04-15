@@ -13,11 +13,11 @@ def get_categories():
     This is used to show a selection menu in the CLI or Web app.
     """
     return {
-        "1": "affirmation 🧘‍",
-        "2": "motivation 🏁",
-        "3": "preppin 📋",
-        "4": "gratitude 🙏",
-        "5": "inner_truths 🪞"
+        "1": "affirmation",
+        "2": "motivation",
+        "3": "preppin",
+        "4": "gratitude",
+        "5": "inner_truths"
     }
 
 
