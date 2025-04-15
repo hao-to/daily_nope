@@ -32,9 +32,52 @@ Choose your category:
 ```bash
 git clone https://github.com/hao-to/daily_nope.git
 cd daily_nope
-Run the CLI:
+```
+2. Run the CLI:
+```bash
 python3 daily_nope.py
-Choose a category and receive the nope you never asked for.
+```
+
+3. Choose a category and receive the nope you never asked for.
+
+
+---
+
+## 🖥️ How to use in the browser
+
+Prefer clicking over typing? The Daily Nope now has a web version!
+
+### 🚀 Run the Web App locally
+
+1. Clone the repo:
+   ```bash
+   git clone https://github.com/hao-to/daily_nope.git
+   cd daily_nope
+   ```
+
+2. (Optional) Create and activate a virtual environment:
+```bash
+python3 -m venv venv
+source venv/bin/activate   # macOS/Linux
+venv\Scripts\activate      # Windows
+```
+
+3. Install the requirements:
+```bash
+pip install -r requirements.txt
+```
+
+4. Start the Flask app:
+```bash
+python3 flask_app.py
+```
+
+5. Open your browser and enjoy the nope:
+```bash
+http://localhost:5050
+```
+✨ Bonus: You get slowly typed quotes, glowing buttons, and absolutely zero useful advice.
+
 📂 Project Structure
 
 daily_nope/
@@ -44,8 +87,14 @@ daily_nope/
 │   ├── preppin.json
 │   ├── gratitude.json
 │   └── inner_truths.json
-├── quotes_handler.py     # loads quotes and picks one
+├── static/
+│   └── style.css         # Glorious dark theme with glow ✨
+├── templates/
+│   └── index.html        # The HTML template for the web version
+├── quotes_handler.py     # Loads quotes and picks one
 ├── daily_nope.py         # CLI interface
+├── flask_app.py          # Flask Web App
+├── requirements.txt      # Python dependencies
 ├── .gitignore
 └── README.md             # (You're reading it!)
 ✨ Why?
