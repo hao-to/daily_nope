@@ -2,8 +2,9 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>The Daily Nope</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}?v=999">
 </head>
 <body>
     <h1>The Daily Nope 🖤</h1>
@@ -35,18 +36,18 @@
         <p id="quote" class="quote"></p>
     </div>
     <script>
-        const quoteText = "{{ quote }}";
+        const quoteText = {{ quote | tojson }};
         const quoteElement = document.getElementById("quote");
         let i = 0;
         function typeEffect() {
             if (i < quoteText.length) {
                 quoteElement.innerHTML += quoteText.charAt(i);
                 i++;
-                setTimeout(typeEffect, 40); // Geschwindigkeit des Tippens
+                setTimeout(typeEffect, 40); // Typing speed
             }
         }
         typeEffect();
     </script>
-{% endif %}
+    {% endif %}
 </body>
 </html>
